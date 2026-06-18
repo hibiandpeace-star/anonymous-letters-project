@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ anonymous letters ]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f0e8;
+      color: #2c2a24;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid #c8c0b0;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a7060;
+    }
+    .nav-links a:hover { color: #2c2a24; }
+
+    .hero {
+      padding: 5rem 2.5rem 4rem;
+      text-align: center;
+      border-bottom: 0.5px solid #c8c0b0;
+    }
+    .hero-vol {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a09880;
+      margin-bottom: 1.5rem;
+    }
+    .hero-envelope {
+      font-size: 52px;
+      margin-bottom: 1.25rem;
+      opacity: 0.5;
+      line-height: 1;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      color: #2c2a24;
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: #6a6050;
+      line-height: 1.9;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+    .hero-tag {
+      display: inline-block;
+      border: 0.5px solid #c8c0b0;
+      padding: 0.5rem 1.5rem;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #8a8070;
+    }
+
+    .theme-banner {
+      padding: 2.5rem 2.5rem;
+      text-align: center;
+      background: #ede8dc;
+      border-bottom: 0.5px solid #c8c0b0;
+    }
+    .theme-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a09880;
+      margin-bottom: 0.75rem;
+    }
+    .theme-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.6;
+      color: #2c2a24;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .theme-deadline {
+      font-size: 12px;
+      color: #a09880;
+      margin-top: 1rem;
+      letter-spacing: 0.06em;
+    }
+
+    .section {
+      padding: 3rem 2.5rem;
+      border-bottom: 0.5px solid #c8c0b0;
+      max-width: 760px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .section-full {
+      padding: 3rem 2.5rem;
+      border-bottom: 0.5px solid #c8c0b0;
+    }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a09880;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+      font-size: 15px;
+      line-height: 2;
+      color: #5a5040;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .how-card {
+      border: 0.5px solid #c8c0b0;
+      padding: 1.5rem;
+      background: #f5f0e8;
+    }
+    .how-icon { font-size: 22px; opacity: 0.4; margin-bottom: 0.75rem; }
+    .how-title {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: #2c2a24;
+    }
+    .how-desc {
+      font-size: 12px;
+      color: #7a7060;
+      line-height: 1.7;
+    }
+
+    .divider {
+      text-align: center;
+      color: #c8c0b0;
+      font-size: 13px;
+      padding: 1.5rem 0;
+      letter-spacing: 0.3em;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .archive-card {
+      border: 0.5px solid #c8c0b0;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      background: #ede8dc;
+    }
+    .archive-env { font-size: 30px; opacity: 0.3; margin-bottom: 0.75rem; }
+    .archive-vol {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #a09880;
+    }
+    .archive-theme {
+      font-family: 'Playfair Display', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: #6a6050;
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .cta-section {
+      padding: 4rem 2.5rem;
+      text-align: center;
+    }
+    .cta-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-style: italic;
+      margin-bottom: 2rem;
+      color: #2c2a24;
+    }
+    .cta-btn {
+      display: inline-block;
+      border: 0.5px solid #2c2a24;
+      padding: 0.75rem 2.5rem;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #2c2a24;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #ede8dc; }
+
+    footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 0.5px solid #c8c0b0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #a09880;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .hero-title { font-size: 28px; }
+      .theme-banner { padding: 2rem 1.25rem; }
+      .section { padding: 2rem 1.25rem; }
+      .section-full { padding: 2rem 1.25rem; }
+      .how-grid { grid-template-columns: 1fr; }
+      .archive-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 3rem 1.25rem; }
+      footer { padding: 1.25rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">[ anonymous letters ]</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#theme">This month</a>
+      <a href="#archive">Archive</a>
+      <a href="#submit">Submit</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-vol">Vol. 01 — 2025</div>
+    <div class="hero-envelope">✉</div>
+    <h1 class="hero-title">anonymous letters</h1>
+    <p class="hero-sub">A space to share the words you couldn't say — through letters, drawings, or voice.</p>
+    <div class="hero-tag">completely anonymous &nbsp;·&nbsp; handwritten &nbsp;·&nbsp; monthly</div>
+  </div>
+
+  <div class="theme-banner" id="theme">
+    <div class="theme-label">This month's theme — Vol. 01</div>
+    <div class="theme-text">「 If you could go back in time and say something to someone, who would it be — and what would you say? 」</div>
+    <div class="theme-deadline">Deadline: July 30, 2025</div>
+  </div>
+
+  <div class="section" id="about">
+    <div class="section-label">About this project</div>
+    <p class="about-text">In a world where digital messages can be sent in an instant, there is something irreplaceable about putting pen to paper. This project was started to bring that back — and to create a space where feelings that are hard to say out loud can be shared, anonymously and honestly.</p>
+  </div>
+
+  <div class="section-full">
+    <div class="section-label" style="max-width:760px; margin: 0 auto 1.5rem;">How to participate</div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-icon">✉</div>
+        <div class="how-title">By post</div>
+        <div class="how-desc">Send your handwritten letter, drawing, or USB voice memo to the address below. Please mail at least 3 days before the deadline.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">↑</div>
+        <div class="how-title">Digital</div>
+        <div class="how-desc">Upload a photo of your letter or an audio file (under 3 mins) via Google Form. All files are printed or saved offline.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="section-full" id="archive">
+    <div class="section-label" style="max-width:760px; margin: 0 auto 1.5rem;">Archive</div>
+    <div class="archive-grid">
+      <div class="archive-card">
+        <div class="archive-env">✉</div>
+        <div class="archive-vol">Vol. 01</div>
+        <div class="archive-theme">Things I should have said</div>
+      </div>
+      <div class="archive-card">
+        <div class="archive-env">✉</div>
+        <div class="archive-vol">Vol. 02</div>
+        <div class="archive-theme">coming soon</div>
+      </div>
+      <div class="archive-card">
+        <div class="archive-env">✉</div>
+        <div class="archive-vol">Vol. 03</div>
+        <div class="archive-theme">coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section" id="submit">
+    <div class="cta-text">Let your hidden words breathe.</div>
+    <a href="#" class="cta-btn">Submit your letter</a>
+  </div>
+
+  <footer>
+    <span>© anonymous letters project</span>
+    <span>Tokyo, Japan</span>
+  </footer>
+
+</body>
+</html>
